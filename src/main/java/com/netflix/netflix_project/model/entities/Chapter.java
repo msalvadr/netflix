@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "Chapters")
+@Table(name = "chapters")
 public class Chapter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,6 @@ public class Chapter {
     @ManyToOne
     private Season season;
 
-    @ManyToMany
-    private List<Actor> actorList;
+
 
 }
