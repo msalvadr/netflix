@@ -8,5 +8,6 @@ import java.util.List;
 
 @Mapper
 public interface SeasonMapper {
-    List<SeasonDTO> map(List<Season> seasonList);
+    Season toEntity(SeasonDTO source);
+    SeasonDTO toDto(Season target);
 }

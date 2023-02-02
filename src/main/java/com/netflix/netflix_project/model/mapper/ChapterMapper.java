@@ -10,7 +10,8 @@ import java.util.List;
 @Mapper
 public interface ChapterMapper {
 
-    List<ChapterDTO> map(List<Chapter> chapterList);
+    Chapter toEntity(ChapterDTO source);
+    ChapterDTO toDto(Chapter target);
 
 
 }
