@@ -1,0 +1,1 @@
+insert into actors (description, name) values ('guapo y listo', 'antonio');

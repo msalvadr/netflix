@@ -1,6 +1,8 @@
 package com.netflix.netflix_project.model.service;
 
+import com.netflix.netflix_project.model.dto.ActorDTO;
 import com.netflix.netflix_project.model.entities.Actor;
+import com.netflix.netflix_project.model.mapper.ActorMapper;
 import com.netflix.netflix_project.model.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,8 +14,8 @@ public class ActorService {
     @Autowired
     private ActorRepository repository;
 
-    public List<Actor> listActors(){
-        return repository.findAll();
+    public List<ActorDTO> listActors(){
+        return ActorMapper.ADAPTER.entitiesToDto(repository.findAll());
     }
 
     public void saveActor(Actor actor){
