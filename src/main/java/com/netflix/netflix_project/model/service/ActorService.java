@@ -22,8 +22,8 @@ public class ActorService {
         repository.save(actor);
     }
 
-    public Actor getActorById(Long id){
-        return repository.findById(id).get();
+    public ActorDTO getActorById(Long id){
+      return ActorMapper.ADAPTER.toDto(repository.findById(id).get());
     }
 
     public void deleteActor(Long id){

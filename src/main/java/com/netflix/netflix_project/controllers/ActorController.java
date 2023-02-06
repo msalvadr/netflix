@@ -23,6 +23,11 @@ public class ActorController {
         return ResponseEntity.ok().body(actorDTOList);
     }
 
+    @GetMapping("/actor/{id}")
+    public ResponseEntity<ActorDTO> getById(@PathVariable Long id){
+        ActorDTO actor = service.getActorById(id);
+        return ResponseEntity.ok().body(actor);
+    }
 
 
     @DeleteMapping("/delete/{id}")
